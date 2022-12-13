@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			#wrap {
+				width: 500px;
+				height: 300px;
+				border: 1px solid black;
+				margin: 30px auto 10px auto;
+				text-align: center;
+			}
+			#wrap>h2 {
+				font-size: 30px;
+			}
+			
+			#wrap>form {
+				width: 250px;
+				height: 250px;
+				text-align: left;
+				margin: 20px auto;
+			}
+			
+			#wrap>form>input {
+				margin-bottom: 10px;
+			}
+			
+			#wrap>form>input[type=button] {
+				display: block;
+				margin: 30px auto 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h2>회원정보</h2>
+			<form action="01-2_JBean_Member.jsp">
+				이름 : <input type="text" name="userName"><br>
+				성별 : <input type="radio" name="userGender" value="남자" checked>남자
+				<input type="radio" name="userGender" value="여자">여자 <br>
+				나이 : <input type="text" name="userAge"><br>
+				<input type="button" value="확인" onclick="mySubmit(this.form)">
+			</form>
+		</div>
+		
+		<script type="text/javascript">
+			function mySubmit(f) {
+				if(f.userName.value.length == 0) {
+					alert("이름을 입력하여 주세요.");
+					return;
+				} else if(f.userAge.value.length == 0) {
+					alert("나이를 입력하여 주세요.");
+					return;
+				}else {
+					f.submit();
+				}
+			}
+		</script>
+	</body>
+</html>

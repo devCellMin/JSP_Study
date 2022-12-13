@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			#wrap {
+				width: 300px;
+				height: 200px;
+				border: 1px solid black;
+				margin: 30px auto 0 auto;
+				text-align: center;
+			}
+			#wrap>h2 {
+				padding: 10px 0;
+			}
+			#wrap>form {
+				margin-top: 10px;
+			}
+			#wrap>form>input[type=button] {
+				margin: 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h2>Calculator with JavaBean</h2>
+			<span>수를 입력하고, 등호를 선택하시오.</span>
+			<form method="post" action="JB_CalcBean.jsp">
+				<input type="text" name="num1" size="5">
+				<select name="op">
+					<option value="none">======</option>
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+					<option value="%">%</option>
+				</select>
+				<input type="text" name="num2" size="5"><br>
+				<input type="button" value="확인" onclick="mysubmit(this.form)">
+			</form>
+		</div>
+		
+		<script type="text/javascript">
+			function mysubmit(f) {
+				if(f.num1.value.length == 0 || f.num2.value.length == 0) {
+					alert("수를 입력하여 주세요.");
+					return;
+				} else if(f.op.value == "none") {
+					alert("부호를 선택하여 주세요.");
+					return;
+				} else {
+					f.submit();
+				}
+			}
+		</script>
+	</body>
+</html>

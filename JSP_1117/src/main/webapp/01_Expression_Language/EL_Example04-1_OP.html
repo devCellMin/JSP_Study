@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			#wrap {
+				width: 300px;
+				height: 300px;
+				margin: 30px auto 10px auto;
+			}
+			.btnSubmit {
+				display: block;
+				padding: 3px 5px;
+				margin: 20px auto 10px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<form action="EL_Example04-2_OP.jsp">
+				첫번쨰 수 : <input type="text" name="Num1"><br><br>
+				두번쨰 수 : <input type="text" name="Num2">
+				<input type="button" value="확인" class="btnSubmit" onclick="mySubmit(this.form)">
+			</form>
+		</div>
+		
+		<script type="text/javascript">
+			function mySubmit(f) {
+				if(f.Num1.value.length == 0) {
+					alert("첫 번째 수를 입력하세요.");
+					return;
+				} else if(f.Num2.value.length == 0) {
+					alert("두 번째 수를 입력하세요.");
+					return;
+				} else {
+					f.submit();
+				}
+			}
+		</script>
+	</body>
+</html>

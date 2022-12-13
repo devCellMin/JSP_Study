@@ -1,0 +1,13 @@
+Member.java (Bean) -> get / set data 보관용 클래스
+MembberDAO -> 공용 데이터 처리 메소드(DB Connect Instance, Insert method, Delete method)
+	-> DB Connect Instance가 존재하면, 생성하지 않고 Instance를 반환하고, 없으면 생성해서 반환
+	-> Database(Player, Member), J_Connector API
+
+<DB Insert>
+html에서 입력받은 데이터를 form action으로 member.java Bean에 Set
+DB Connect - (insert, delete, update, ...) -> Object Instance로 생성 - 모든 프로그램에서 호출
+member.java Bean data를 get 해서 DB Insert
+
+<DB Select>
+DB Connect -> (insert, delete, update, ...) -> Object Instance로 생성 - 모든 프로그램에서 호출
+Object instance를 통해 얻은 Resultset 데이터를 member.java Bean에 Set
